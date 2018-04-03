@@ -3,6 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_very_big_margin">32dp</dimen>
+    <dimen name="activity_super_big_margin">100dp</dimen>
     <dimen name="activity_big_margin">22dp</dimen>
     <dimen name="activity_middle_margin">12dp</dimen>
     <dimen name="activity_small_margin">8dp</dimen>

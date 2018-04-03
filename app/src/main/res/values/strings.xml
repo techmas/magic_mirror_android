@@ -4,13 +4,19 @@
     <string name="something_went_wrong">Что-то пошло не так :\'(</string>
     <string name="registration">Регистрация</string>
     <string name="entry">Вход</string>
-    <string name="forgot_password">Забыли пароль?</string>
+    <string name="forgot_password"><u>Забыли пароль?</u></string>
     <string name="tmp_phone">+7(961) 979-89-32</string>
     <string name="e_mail">E-mail</string>
     <string name="recover">Восстановить</string>
     <string name="manual">Мы отправим инструкцию\nпо восстановлению пароля\nна Ваш e-mail</string>
+    <string name="enter_control_line">Введите контрольную строку\nкоторая пришла Вам на e-mail и\nсоздайте новый пароль </string>
     <string name="cancel">Отмена</string>
     <string name="recover_password">Восстановить пароль</string>
     <string name="name">Оксана</string>
     <string name="surname">Дугинова</string>
+    <string name="lbl_control_line">Контрольная строка</string>
+    <string name="lbl_new_password">Новый пароль</string>
+    <string name="lbl_repeat_password">Повторите пароль</string>
+    <string name="send">Отправить</string>
+    <string name="next">Далее</string>
 </resources>
