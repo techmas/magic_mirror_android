@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <TextView
+        style="@style/PinkBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация" />
+
+    <EditText
+        android:id="@+id/etName"
+        style="@style/EditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_middle_margin"
+        android:hint="Оксана" />
+
+    <EditText
+        android:id="@+id/etSurname"
+        style="@style/EditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Дугинова" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        style="@style/EditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="+7(961) 979-89-32"
+        android:inputType="phone|number" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        style="@style/EditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/EditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="●●●●●●●●●●●●●●●"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/registration"
+        android:layout_marginTop="@dimen/activity_big_margin"
+        style="@style/ButtonPink" />
+
+    <TextView
+        android:id="@+id/tvEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/PinkSmall"
+        android:text="@string/entry"
+        android:layout_marginTop="@dimen/activity_big_margin"/>
+
+</LinearLayout>
 
