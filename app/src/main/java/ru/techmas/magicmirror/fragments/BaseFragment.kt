@@ -60,14 +60,14 @@ abstract class BaseFragment : MvpAppCompatFragment(), NavigatorActivityView, Bas
     }
 
 
-    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation {
-        if (Navigator.isFragmentAnimationDisabled) {
-            val a = object : Animation() {}
-            a.duration = 0
-            return a
-        }
-        return super.onCreateAnimation(transit, enter, nextAnim)
-    }
+//    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation {
+//        if (Navigator.isFragmentAnimationDisabled) {
+//            val a = object : Animation() {}
+//            a.duration = 0
+//            return a
+//        }
+//        return super.onCreateAnimation(transit, enter, nextAnim)
+//    }
 
 
     protected fun <T : View> bindView(@IdRes id: Int): T {

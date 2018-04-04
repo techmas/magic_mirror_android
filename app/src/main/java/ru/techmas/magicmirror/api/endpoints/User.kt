@@ -2,7 +2,10 @@ package ru.techmas.magicmirror.api.endpoints
 
 import io.reactivex.Observable
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Query
 import ru.techmas.magicmirror.api.ApiResponse
 
 /**
@@ -12,8 +15,11 @@ import ru.techmas.magicmirror.api.ApiResponse
 
 interface User {
 
+    @GET("app/user/author")
+    fun login(@Query("login") login: String,
+              @Query("password") password: String): Observable<Response<ApiResponse<String>>>
 
-    //    // TODO: 09.11.2016 init here!
-    @get:GET("album/list")
-    val test: Observable<Response<ApiResponse<String>>>
+    @POST("app/user/reg")
+    fun registration(@Body user: String): Observable<Response<ApiResponse<String>>>
+
 }

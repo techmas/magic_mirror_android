@@ -30,7 +30,7 @@ class ProfileFragment : BaseFragment(), ProfileView {
     }
 
     @InjectPresenter
-    internal var profilePresenter: ProfilePresenter? = null
+    lateinit var profilePresenter: ProfilePresenter
 
     @ProvidePresenter
     internal fun provideProfilePresenter(): ProfilePresenter {

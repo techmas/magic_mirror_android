@@ -30,7 +30,7 @@ class AlbumFragment : BaseFragment(), AlbumView {
     }
 
     @InjectPresenter
-    internal var albumPresenter: AlbumPresenter? = null
+    lateinit var albumPresenter: AlbumPresenter
 
     @ProvidePresenter
     internal fun provideAlbumPresenter(): AlbumPresenter {

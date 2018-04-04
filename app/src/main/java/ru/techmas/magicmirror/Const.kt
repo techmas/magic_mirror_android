@@ -9,8 +9,7 @@ class Const {
 
 
     object Url {
-        val API_PRODACTION = "http://admin.ss-ss.sssss.ru/ss/ss/"
-        val API_TEST = "http://admin.ss-ss.sssss.ru/ss/ss/"
+        val API_PRODUCTION = "http://magicmirror-v2.techmas.ru/"
         val AUTHORIZATION = "Authorization"
     }
 }

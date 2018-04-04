@@ -1,6 +1,7 @@
 package ru.techmas.magicmirror.presenters
 
 import com.arellomobile.mvp.InjectViewState
+import ru.techmas.magicmirror.activities.AuthActivity
 
 import javax.inject.Inject
 
@@ -22,10 +23,11 @@ internal constructor(restApi: RestApi, preferenceHelper: TokenHelper) : BasePres
 
 
     fun startNext() {
-        viewState.showErrorConnection(false)
-        if (tokenHelper!!.isFirstRun) {
-            viewState.startActivity(MainActivity::class.java)
-        }
+//        viewState.showErrorConnection(false)
+//        if (tokenHelper!!.isFirstRun)
+            viewState.startActivity(AuthActivity::class.java)
+//        else
+//            viewState.startActivity(MainActivity::class.java)
     }
 
 }

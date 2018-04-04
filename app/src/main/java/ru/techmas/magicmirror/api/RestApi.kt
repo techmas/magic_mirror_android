@@ -43,7 +43,7 @@ class RestApi(private val tokenHelper: TokenHelper) {
                 .build()
 
 
-        retrofit = Retrofit.Builder().baseUrl(Const.Url.API_PRODACTION)
+        retrofit = Retrofit.Builder().baseUrl(Const.Url.API_PRODUCTION)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -54,7 +54,7 @@ class RestApi(private val tokenHelper: TokenHelper) {
 
     fun getServer(): String {
 
-        if (retrofit.baseUrl().toString()== Const.Url.API_PRODACTION)
+        if (retrofit.baseUrl().toString()== Const.Url.API_PRODUCTION)
             return "Prodaction"
         else
             return "Test"

@@ -26,9 +26,6 @@
         android:id="@+id/ltContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <include layout="@layout/fragment_registration"/>
-
     </LinearLayout>
 
 </LinearLayout>

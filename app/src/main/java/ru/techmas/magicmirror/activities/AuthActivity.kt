@@ -10,8 +10,10 @@ import ru.techmas.magicmirror.R
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import ru.techmas.magicmirror.fragments.LoginFragment
 
 import ru.techmas.magicmirror.utils.Injector
+import ru.techmas.magicmirror.utils.Navigator
 
 
 class AuthActivity : BaseActivity(), AuthView {
@@ -27,6 +29,10 @@ class AuthActivity : BaseActivity(), AuthView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(LAYOUT)
+    }
+
+    override fun showLoginFragment() {
+        Navigator.startFragment(LoginFragment.newInstance(), supportFragmentManager, R.id.ltContainer)
     }
 
     @InjectPresenter

@@ -9,4 +9,5 @@ import javax.inject.Inject
 
 @InjectViewState
 class AlbumPresenter @Inject
-constructor() : BasePresenter<AlbumView>()
+internal constructor() : BasePresenter<AlbumView>()
+

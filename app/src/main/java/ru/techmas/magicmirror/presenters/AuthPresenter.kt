@@ -9,4 +9,8 @@ import javax.inject.Inject
 
 @InjectViewState
 class AuthPresenter @Inject
-constructor() : BasePresenter<AuthView>()
+constructor() : BasePresenter<AuthView>() {
+    init {
+        viewState.showLoginFragment()
+    }
+}
