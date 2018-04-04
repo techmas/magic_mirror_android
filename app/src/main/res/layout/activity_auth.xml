@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_big_margin">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/background" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ltContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/fragment_registration"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
 
