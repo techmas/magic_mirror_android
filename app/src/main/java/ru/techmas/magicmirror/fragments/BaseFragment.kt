@@ -35,6 +35,12 @@ abstract class BaseFragment : MvpAppCompatFragment(), NavigatorActivityView, Bas
         Injector.viewComponent?.inject(this)
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        setupUX()
+    }
+
     protected fun hideKeyboard() {
         KeyboardHelper.hide(activity)
     }

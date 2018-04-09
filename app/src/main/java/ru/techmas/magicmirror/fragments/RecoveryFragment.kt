@@ -7,7 +7,7 @@ import android.view.ViewGroup
 
 import ru.techmas.magicmirror.interfaces.views.RecoveryView
 import ru.techmas.magicmirror.R
-import ru.techmas.magicmirror.presenters.RecoveryPresenter
+import ru.techmas.magicmirror.presenters.auth.RecoveryPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter

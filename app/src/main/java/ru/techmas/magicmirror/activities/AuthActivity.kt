@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 
 import ru.techmas.magicmirror.interfaces.views.AuthView
-import ru.techmas.magicmirror.presenters.AuthPresenter
+import ru.techmas.magicmirror.presenters.auth.AuthPresenter
 import ru.techmas.magicmirror.R
 
 import com.arellomobile.mvp.presenter.InjectPresenter

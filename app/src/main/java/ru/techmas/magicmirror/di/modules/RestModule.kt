@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import ru.techmas.magicmirror.App
 import ru.techmas.magicmirror.api.RestApi
+import ru.techmas.magicmirror.api.models.UserDTO
 import ru.techmas.magicmirror.utils.presenter.TokenHelper
 
 /**
@@ -24,11 +25,19 @@ class RestModule(app: App) {
 
     private val tokenHelper: TokenHelper = TokenHelper(PreferenceManager.getDefaultSharedPreferences(app))
     private val restApi: RestApi
+    private val user: UserDTO
 
     init {
         restApi = RestApi(tokenHelper)
+        user = UserDTO()
     }
 
+
+    @Singleton
+    @Provides
+    internal fun provideUser(): UserDTO {
+        return user
+    }
 
     @Singleton
     @Provides

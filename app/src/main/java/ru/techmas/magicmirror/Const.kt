@@ -7,6 +7,14 @@ package ru.techmas.magicmirror
 
 class Const {
 
+    object StringBoolean {
+        val TRUE = "YES"
+        val FALSE = "NO"
+    }
+
+    object API {
+        val STATUS_ERROR = "error"
+    }
 
     object Url {
         val API_PRODUCTION = "http://magicmirror-v2.techmas.ru/"

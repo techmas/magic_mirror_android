@@ -1,4 +1,4 @@
-package ru.techmas.magicmirror.api
+package ru.techmas.magicmirror.api.models
 
 import com.google.gson.annotations.SerializedName
 
