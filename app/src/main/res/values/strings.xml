@@ -5,7 +5,7 @@
     <string name="registration">Регистрация</string>
     <string name="entry">Вход</string>
     <string name="forgot_password"><u>Забыли пароль?</u></string>
-    <string name="tmp_phone">Телефон</string>
+    <string name="tmp_phone">Номер телефона</string>
     <string name="e_mail">E-mail</string>
     <string name="recover">Восстановить</string>
     <string name="manual">Мы отправим инструкцию\nпо восстановлению пароля\nна Ваш e-mail</string>
@@ -24,4 +24,10 @@
     <string name="not_show_photo">Не показывать\nмои фото в рейтинге</string>
     <string name="save">Сохранить</string>
     <string name="exit_account">Выйти из учетной записи</string>
+    <string name="lbl_password">Пароль</string>
+    <string name="password_changed_success">Пароль успешно изменен!</string>
+    <string name="tmp_rating">123456789</string>
+    <string name="your_value">Ваша оценка красоты</string>
+    <string name="you_occupy">Вы занимаете</string>
+    <string name="place_in_rating">место в рейтинге по Москве</string>
 </resources>

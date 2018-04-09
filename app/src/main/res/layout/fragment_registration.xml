@@ -37,7 +37,7 @@
     <EditText
         android:id="@+id/etPassword"
         style="@style/StandardEditText"
-        android:hint="●●●●●●●●●●●●●●●"
+        android:hint="@string/lbl_password"
         android:inputType="textPassword" />
 
     <Button
