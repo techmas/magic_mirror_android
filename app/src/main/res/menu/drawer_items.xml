@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_item_album"
+            android:checked="true"
+            android:icon="@drawable/image"
+            android:title="@string/album" />
+        <item
+            android:id="@+id/nav_item_most_beauty"
+            android:checked="true"
+            android:icon="@drawable/star"
+            android:title="@string/most_beauty" />
+        <item
+            android:id="@+id/nav_item_make_photo"
+            android:checked="true"
+            android:icon="@drawable/photo"
+            android:title="@string/make_photo" />
+        <item
+            android:id="@+id/nav_item_my_prophile"
+            android:checked="true"
+            android:icon="@drawable/user"
+            android:title="@string/my_prophile" />
+    </group>
+</menu>
