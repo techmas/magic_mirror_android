@@ -16,14 +16,31 @@ import ru.techmas.magicmirror.interfaces.views.MainView
 import ru.techmas.magicmirror.presenters.MainActivityPresenter
 import ru.techmas.magicmirror.utils.Injector
 
-class MainActivity : BaseActivity(), MainView, NavigationView.OnNavigationItemSelectedListener {
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class MainActivity : BaseActivity(), MainView {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setContentView(LAYOUT)
+        super.onCreate(savedInstanceState)
     }
 
+    override fun setupUI() {
+        setSupportActionBar(toolbar)
+//        supportActionBar!!.title="TEST"
+    }
 
-    companion object {
-        private val LAYOUT = R.layout.activity_main
+    override fun setupUX() {
+        setUpDrawerMenu()
+    }
+
+    private fun setUpDrawerMenu() {
+        supportActionBar!!.setHomeButtonEnabled(true)
+        val toggle = ActionBarDrawerToggle(
+                this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        toggle.isDrawerIndicatorEnabled = true
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+        navigationView.setNavigationItemSelectedListener(mainPresenter)
     }
 
     @InjectPresenter
@@ -34,29 +51,7 @@ class MainActivity : BaseActivity(), MainView, NavigationView.OnNavigationItemSe
         return Injector.presenterComponent!!.mainActivityPresenter
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(LAYOUT)
+    companion object {
+        private val LAYOUT = R.layout.activity_main
     }
-
-    override fun setupUI() {
-
-    }
-
-    override fun setupUX() {
-
-    }
-
-    private fun setUpDrawerMenu() {
-        setSupportActionBar(toolbar)
-        val toggle = ActionBarDrawerToggle(
-                this, activity_main, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        activity_main.addDrawerListener(toggle)
-        toggle.syncState()
-        nav_view.setNavigationItemSelectedListener(this)
-
-    }
-
 }

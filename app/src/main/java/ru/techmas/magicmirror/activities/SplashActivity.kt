@@ -36,10 +36,8 @@ class SplashActivity : BaseActivity(), SplashView {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(LAYOUT)
-        setupUI()
-        setupUX()
+        super.onCreate(savedInstanceState)
         mvpDelegate.onAttach()
     }
 

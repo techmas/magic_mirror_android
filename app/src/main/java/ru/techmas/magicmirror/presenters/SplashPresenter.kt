@@ -23,11 +23,11 @@ internal constructor(restApi: RestApi, preferenceHelper: TokenHelper) : BasePres
 
 
     fun startNext() {
-//        viewState.showErrorConnection(false)
-//        if (tokenHelper!!.isFirstRun)
+        viewState.showErrorConnection(false)
+        if (tokenHelper!!.isFirstRun)
             viewState.startActivity(AuthActivity::class.java)
-//        else
-//            viewState.startActivity(MainActivity::class.java)
+        else
+            viewState.startActivity(MainActivity::class.java)
     }
 
 }
