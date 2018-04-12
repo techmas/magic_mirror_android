@@ -13,47 +13,35 @@
 
     <EditText
         android:id="@+id/etName"
-        style="@style/EditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@style/StandardEditText"
         android:layout_marginTop="@dimen/activity_middle_margin"
         android:hint="@string/name" />
 
     <EditText
         android:id="@+id/etSurname"
-        style="@style/EditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@style/StandardEditText"
         android:hint="@string/surname" />
 
     <EditText
         android:id="@+id/etPhone"
-        style="@style/EditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@style/StandardEditText"
         android:hint="@string/tmp_phone"
         android:inputType="phone|number" />
 
     <EditText
         android:id="@+id/etEmail"
-        style="@style/EditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@style/StandardEditText"
         android:hint="@string/e_mail"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etPassword"
-        style="@style/EditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="●●●●●●●●●●●●●●●"
+        style="@style/StandardEditText"
+        android:hint="@string/lbl_password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnRegistration"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
         android:text="@string/registration"
         android:layout_marginTop="@dimen/activity_big_margin"
         style="@style/ButtonPink" />
