@@ -8,15 +8,19 @@
     tools:context=".activities.MainActivity"
     tools:openDrawer="start">
 
-    <include
-        layout="@layout/app_bar_main"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/ltContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <include layout="@layout/toolbar_main" />
+
+        <RelativeLayout
+            android:id="@+id/ltContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"

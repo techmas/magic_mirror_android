@@ -9,18 +9,23 @@ import android.view.MenuItem
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.toolbar_main.*
 
 import ru.techmas.magicmirror.R
+import ru.techmas.magicmirror.interfaces.utils_view.NavigatorActivityView
 import ru.techmas.magicmirror.interfaces.views.MainView
 import ru.techmas.magicmirror.presenters.MainActivityPresenter
 import ru.techmas.magicmirror.utils.Injector
 
-class MainActivity : BaseActivity(), MainView {
+class MainActivity : BaseActivity(), MainView, NavigatorActivityView{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(LAYOUT)
         super.onCreate(savedInstanceState)
+    }
+
+    override fun closeDrawer() {
+        drawer.closeDrawers()
     }
 
     override fun setupUI() {
