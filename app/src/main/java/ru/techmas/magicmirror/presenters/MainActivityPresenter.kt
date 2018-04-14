@@ -7,6 +7,7 @@ import com.arellomobile.mvp.InjectViewState
 import ru.techmas.magicmirror.R
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.fragments.AlbumFragment
+import ru.techmas.magicmirror.fragments.ProfileFragment
 import ru.techmas.magicmirror.fragments.TopFragment
 import ru.techmas.magicmirror.interfaces.views.MainView
 import javax.inject.Inject
@@ -24,6 +25,7 @@ internal constructor(restApi: RestApi) : BasePresenter<MainView>(), NavigationVi
         when (item.itemId) {
             R.id.nav_item_album -> viewState.startFragment(AlbumFragment.newInstance())
             R.id.nav_item_most_beauty -> viewState.startFragment(TopFragment.newInstance())
+            R.id.nav_item_my_prophile -> viewState.startFragment(ProfileFragment.newInstance())
         }
         viewState.closeDrawer()
         return true

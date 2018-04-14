@@ -14,13 +14,18 @@ import com.google.gson.annotations.SerializedName
  */
 
 class ApiResponse<T> {
+    @SerializedName("status")
     var status: String? = null
+
     @SerializedName("status_code")
     var statusCode: String? = null
+
     @SerializedName("status_msg")
     var statusMsg: String? = null
+
     @SerializedName("error_msg")
     var errorMsg: String? = null
+
     @SerializedName("data")
     var data: T? = null
         private set
