@@ -1,12 +1,13 @@
-package ru.techmas.magicmirror.presenters
+package ru.techmas.magicmirror.presenters.auth
 
-import android.util.Log
 import ru.techmas.magicmirror.interfaces.views.LoginView
 
 import com.arellomobile.mvp.InjectViewState
-import retrofit2.Response
-import ru.techmas.magicmirror.api.ApiResponse
+import ru.techmas.magicmirror.Const
+import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.api.RestApi
+import ru.techmas.magicmirror.api.models.UserDTO
+import ru.techmas.magicmirror.presenters.BasePresenter
 import ru.techmas.magicmirror.utils.RxUtils
 import ru.techmas.magicmirror.utils.presenter.TokenHelper
 
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 @InjectViewState
 class LoginPresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper) : BasePresenter<LoginView>() {
+constructor(restApi: RestApi, tokenHelper: TokenHelper, val user: UserDTO) : BasePresenter<LoginView>() {
 
     init {
         this.restApi = restApi
@@ -33,7 +34,11 @@ constructor(restApi: RestApi, tokenHelper: TokenHelper) : BasePresenter<LoginVie
 //        Log.d()
     }
 
-    private fun successLogin(response: Response<ApiResponse<String>>) {
-//        tokenHelper.token = response.token
+    private fun successLogin(response: ApiResponse<UserDTO>) {
+        if (response.status != Const.API.STATUS_ERROR) {
+            tokenHelper!!.token = response.data!!.token
+            user.name = response.data!!.name
+            viewState.showMainActivity()
+        }
     }
 }

@@ -36,7 +36,7 @@ class RestApi(private val tokenHelper: TokenHelper) {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .addInterceptor(tokenInterceptor)
+//                .addInterceptor(tokenInterceptor)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)

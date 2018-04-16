@@ -1,4 +1,6 @@
 package ru.techmas.magicmirror.interfaces.views
 
 
-interface LoginView : BaseView
+interface LoginView : BaseView {
+    fun showMainActivity()
+}

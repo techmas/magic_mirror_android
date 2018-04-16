@@ -10,6 +10,7 @@ import android.view.View
 import android.view.animation.Animation
 
 import com.arellomobile.mvp.MvpAppCompatFragment
+import ru.techmas.magicmirror.R
 
 import ru.techmas.magicmirror.activities.BaseActivity
 import ru.techmas.magicmirror.interfaces.utils_view.BaseLifeCycle
@@ -35,6 +36,12 @@ abstract class BaseFragment : MvpAppCompatFragment(), NavigatorActivityView, Bas
         Injector.viewComponent?.inject(this)
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        setupUX()
+    }
+
     protected fun hideKeyboard() {
         KeyboardHelper.hide(activity)
     }
@@ -46,6 +53,15 @@ abstract class BaseFragment : MvpAppCompatFragment(), NavigatorActivityView, Bas
     override fun startActivityForResult(activityClass: Class<out BaseActivity>, requestCode: Int) {
         Navigator.startActivityForResult(activity, activityClass, requestCode)
     }
+
+    override fun startFragment(baseFragment: BaseFragment, addToBackStack: Boolean) {
+        Navigator.startFragment(baseFragment, activity.supportFragmentManager, R.id.ltContainer, addToBackStack)
+    }
+
+    override fun startFragment(baseFragment: BaseFragment) {
+        Navigator.startFragment(baseFragment, activity.supportFragmentManager, R.id.ltContainer)
+    }
+
 
     protected fun hideView(view: View) {
         if (view.visibility == View.VISIBLE) {
