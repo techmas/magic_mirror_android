@@ -7,11 +7,12 @@ import android.view.ViewGroup
 
 import ru.techmas.magicmirror.interfaces.views.LoginView
 import ru.techmas.magicmirror.R
-import ru.techmas.magicmirror.presenters.LoginPresenter
+import ru.techmas.magicmirror.presenters.auth.LoginPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import kotlinx.android.synthetic.main.fragment_login.*
+import ru.techmas.magicmirror.activities.MainActivity
 import ru.techmas.magicmirror.utils.Injector
 
 
@@ -22,6 +23,10 @@ class LoginFragment : BaseFragment(), LoginView {
 
     override fun setupUX() {
         btnEntry.setOnClickListener { loginPresenter.loginUser(etPhone.text.toString(), etPassword.text.toString())}
+    }
+
+    override fun showMainActivity() {
+        startActivity(MainActivity::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,

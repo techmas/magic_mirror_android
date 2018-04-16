@@ -1,8 +1,9 @@
-package ru.techmas.magicmirror.presenters
+package ru.techmas.magicmirror.presenters.auth
 
 import ru.techmas.magicmirror.interfaces.views.RecoveryView
 
 import com.arellomobile.mvp.InjectViewState
+import ru.techmas.magicmirror.presenters.BasePresenter
 
 import javax.inject.Inject
 

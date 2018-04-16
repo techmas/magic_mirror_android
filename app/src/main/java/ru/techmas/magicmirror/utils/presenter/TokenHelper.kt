@@ -9,22 +9,21 @@ import android.content.SharedPreferences
 
 class TokenHelper(private val preferences: SharedPreferences) {
 
-
     companion object {
         private val PREF_TOKEN_API = "tokenAPI"
     }
 
     internal var token: String? = null
-
-    fun getToken(): String? {
-        if (token == null) token = preferences.getString(PREF_TOKEN_API, "")
-        return token
-    }
-
-    fun setToken(token: String) {
-        this.token = token
-        preferences.edit().putString(PREF_TOKEN_API, token).apply()
-    }
+        set(value) {
+            preferences.edit().putString(PREF_TOKEN_API, value).apply()
+            field = value
+        }
+        get() = if (field == null) {
+            field = preferences.getString(PREF_TOKEN_API, "")
+            field
+        } else {
+            field
+        }
 
     val isFirstRun: Boolean
         get() = !preferences.contains(PREF_TOKEN_API)

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 
 import ru.techmas.magicmirror.interfaces.views.RegistrationView
 import ru.techmas.magicmirror.R
-import ru.techmas.magicmirror.presenters.RegistrationPresenter
+import ru.techmas.magicmirror.presenters.auth.RegistrationPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter

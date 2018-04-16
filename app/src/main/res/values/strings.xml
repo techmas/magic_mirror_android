@@ -19,6 +19,14 @@
     <string name="lbl_repeat_password">Повторите пароль</string>
     <string name="send">Отправить</string>
     <string name="next">Далее</string>
+    <string name="album">Альбом</string>
+    <string name="most_beauty">Самые красивые</string>
+    <string name="make_photo">Сделать фото</string>
+    <string name="my_prophile">Мой профиль</string>
+    <string name="nav_header_desc">Navigation Header</string>
+    <string name="user_name">Оксана Дугинова</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="tmp_dob">Дата рождения</string>
     <string name="tmp_city">Город</string>
     <string name="not_show_photo">Не показывать\nмои фото в рейтинге</string>

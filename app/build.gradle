@@ -16,6 +16,11 @@ android {
     buildTypes {
 
         debug {
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${variant.applicationId}-${variant.name}-${variant.versionName}.apk"
+                }
+            }
         }
     }
     compileOptions {

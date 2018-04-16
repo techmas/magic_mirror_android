@@ -7,6 +7,10 @@ import ru.techmas.magicmirror.App
 import ru.techmas.magicmirror.di.modules.RestModule
 import ru.techmas.magicmirror.di.modules.UtilsModule
 import ru.techmas.magicmirror.presenters.*
+import ru.techmas.magicmirror.presenters.auth.AuthPresenter
+import ru.techmas.magicmirror.presenters.auth.LoginPresenter
+import ru.techmas.magicmirror.presenters.auth.RecoveryPresenter
+import ru.techmas.magicmirror.presenters.auth.RegistrationPresenter
 
 /**
  * Created by Alex Bykov on 09.11.2016.
