@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/girl"
-        android:tint="#d2000000" />
+        android:tint="@color/dark_photo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="270dp"
-            android:layout_height="270dp"
+            android:layout_width="@dimen/mask_size"
+            android:layout_height="@dimen/mask_size"
             android:src="@drawable/mask" />
 
     </LinearLayout>
@@ -27,13 +27,13 @@
     <RelativeLayout
         android:id="@+id/ltBottom"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/footer_dark_big"
         android:layout_alignParentBottom="true"
-        android:background="#c8050505">
+        android:background="@color/footer_dark">
 
         <ImageView
             android:id="@+id/ivFlash"
-            android:layout_width="40dp"
+            android:layout_width="@dimen/icon_middle"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/activity_extra_big_margin"
@@ -42,7 +42,7 @@
 
         <ImageView
             android:id="@+id/ivPhotoSel"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/icon_big"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:adjustViewBounds="true"
@@ -50,7 +50,7 @@
 
         <ImageView
             android:id="@+id/ivRevCamera"
-            android:layout_width="40dp"
+            android:layout_width="@dimen/icon_middle"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"

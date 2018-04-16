@@ -5,27 +5,32 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <TextView
-        style="@style/PinkBig"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/entry" />
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput">
 
-    <EditText
-        android:id="@+id/etPhone"
-        style="@style/StandardEditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/tmp_phone"
-        android:inputType="phone|number" />
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/StandardEditText"
+            android:layout_width="@dimen/width_edittext"
+            android:layout_height="wrap_content"
+            android:hint="@string/tmp_phone"
+            android:inputType="phone|number" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        style="@style/StandardEditText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/lbl_password"
-        android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/StandardEditText"
+            android:layout_width="@dimen/width_edittext"
+            android:layout_height="wrap_content"
+            android:hint="@string/lbl_password"
+            android:inputType="textPassword" />
+
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnEntry"
@@ -40,7 +45,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_big_margin"
         android:text="@string/registration" />
-
 
     <TextView
         android:id="@+id/tvForgot"

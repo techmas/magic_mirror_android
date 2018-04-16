@@ -13,13 +13,13 @@
     <RelativeLayout
         android:id="@+id/ltBottom"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/footer_dark_big"
         android:layout_alignParentBottom="true"
-        android:background="#c8050505">
+        android:background="@color/footer_dark_light">
 
         <ImageView
             android:id="@+id/ivCancel"
-            android:layout_width="40dp"
+            android:layout_width="@dimen/icon_middle"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/activity_extra_big_margin"
@@ -28,7 +28,7 @@
 
         <ImageView
             android:id="@+id/ivTick"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/icon_big"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
