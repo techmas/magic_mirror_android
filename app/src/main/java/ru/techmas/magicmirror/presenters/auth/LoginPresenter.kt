@@ -7,6 +7,7 @@ import ru.techmas.magicmirror.Const
 import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.api.models.UserDTO
+import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.presenters.BasePresenter
 import ru.techmas.magicmirror.utils.RxUtils
 import ru.techmas.magicmirror.utils.presenter.TokenHelper
@@ -16,7 +17,7 @@ import javax.inject.Inject
 
 @InjectViewState
 class LoginPresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper, val user: UserDTO) : BasePresenter<LoginView>() {
+constructor(restApi: RestApi, tokenHelper: TokenHelper, val appData: AppData) : BasePresenter<LoginView>() {
 
     init {
         this.restApi = restApi
@@ -30,14 +31,10 @@ constructor(restApi: RestApi, tokenHelper: TokenHelper, val user: UserDTO) : Bas
         unSubscribeOnDestroy(request)
     }
 
-    private fun handleError(it: Throwable?) {
-//        Log.d()
-    }
-
     private fun successLogin(response: ApiResponse<UserDTO>) {
         if (response.status != Const.API.STATUS_ERROR) {
             tokenHelper!!.token = response.data!!.token
-            user.name = response.data!!.name
+            appData.user = response.data!!
             viewState.showMainActivity()
         }
     }
