@@ -11,48 +11,76 @@
         android:layout_height="wrap_content"
         android:text="@string/registration" />
 
-    <EditText
-        android:id="@+id/etName"
-        style="@style/StandardEditText"
-        android:layout_marginTop="@dimen/activity_middle_margin"
-        android:hint="@string/name" />
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
 
-    <EditText
-        android:id="@+id/etSurname"
-        style="@style/StandardEditText"
-        android:hint="@string/surname" />
+        <EditText
+            android:id="@+id/etName"
+            style="@style/StandardEditText"
+            android:hint="@string/name" />
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etPhone"
-        style="@style/StandardEditText"
-        android:hint="@string/tmp_phone"
-        android:inputType="phone|number" />
 
-    <EditText
-        android:id="@+id/etEmail"
-        style="@style/StandardEditText"
-        android:hint="@string/e_mail"
-        android:inputType="textEmailAddress" />
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
 
-    <EditText
-        android:id="@+id/etPassword"
-        style="@style/StandardEditText"
-        android:hint="@string/lbl_password"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/etSurname"
+            style="@style/StandardEditText"
+            android:hint="@string/surname" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
+
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/StandardEditText"
+            android:hint="@string/tmp_phone"
+            android:inputType="phone|number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/StandardEditText"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInput"
+        android:layout_marginTop="@dimen/activity_middle_margin">
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/StandardEditText"
+            android:hint="@string/lbl_password"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnRegistration"
-        android:text="@string/registration"
-        android:layout_marginTop="@dimen/activity_big_margin"
-        style="@style/ButtonPink" />
+        style="@style/ButtonPink"
+        android:layout_marginTop="@dimen/activity_very_big_margin"
+        android:text="@string/registration" />
 
     <TextView
         android:id="@+id/tvEntry"
+        style="@style/PinkSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/PinkSmall"
-        android:text="@string/entry"
-        android:layout_marginTop="@dimen/activity_big_margin"/>
+        android:layout_marginTop="@dimen/activity_big_margin"
+        android:text="@string/entry" />
+
 
 </LinearLayout>
 

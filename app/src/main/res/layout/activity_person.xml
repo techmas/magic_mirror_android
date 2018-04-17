@@ -26,7 +26,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/icon_small"
                 android:adjustViewBounds="true"
                 android:src="@drawable/heart_white" />
 
@@ -46,7 +46,7 @@
     <LinearLayout
         android:id="@+id/ltBottom"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/footer_size"
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
