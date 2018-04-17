@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ed5199</color>
     <color name="colorPrimaryDark">#802d52</color>
-    <color name="colorAccent">#ed5298</color>
+    <color name="colorAccent">#999999</color>
 
 
 
@@ -13,9 +13,9 @@
 
     <color name="gray_light">#999999</color>
     <color name="gray_dark">#666666</color>
-
-
-
+    <color name="dark_photo">#d2000000</color>
+    <color name="footer_dark">#c8050505</color>
+    <color name="footer_dark_light">#c8050505</color>
 
 
 </resources>

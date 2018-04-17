@@ -3,6 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_very_big_margin">32dp</dimen>
+    <dimen name="activity_extra_big_margin">50dp</dimen>
     <dimen name="activity_super_big_margin">100dp</dimen>
     <dimen name="activity_big_margin">22dp</dimen>
     <dimen name="activity_middle_margin">12dp</dimen>
@@ -14,5 +15,11 @@
     <dimen name="button_width">140dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="width_edittext">200dp</dimen>
+    <dimen name="icon_small">30dp</dimen>
+    <dimen name="footer_size">40dp</dimen>
+    <dimen name="footer_dark_big">120dp</dimen>
+    <dimen name="mask_size">270dp</dimen>
+    <dimen name="icon_big">60dp</dimen>
+    <dimen name="icon_middle">40dp</dimen>
 
 </resources>
