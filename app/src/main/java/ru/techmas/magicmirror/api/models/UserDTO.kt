@@ -53,7 +53,11 @@ data class UserDTO(
         var token: String? = null,
 
         @SerializedName("UF_IS_RATE")
-        var ufIsRate: Long? = null
+        var ufIsRate: Long? = null,
+
+        @SerializedName("PERSONAL_MOBILE")
+        var personalMobile: Long? = null
+
 
 //        @SerializedName("USER_GROUP")
 //        var userGroup: String? = null

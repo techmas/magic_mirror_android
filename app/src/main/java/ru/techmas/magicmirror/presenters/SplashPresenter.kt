@@ -40,6 +40,8 @@ internal constructor(restApi: RestApi, preferenceHelper: TokenHelper, val appDat
                 .compose(RxUtils.httpSchedulers())
                 .subscribe({ successGetProfile(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)
+
+
     }
 
     override fun handleError(it: Throwable?) {

@@ -10,6 +10,8 @@ import ru.techmas.magicmirror.R
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.activity_settings.*
+import ru.techmas.magicmirror.presenters.ChangeProfilePresenter
 
 import ru.techmas.magicmirror.utils.Injector
 
@@ -21,7 +23,8 @@ class SettingsActivity : BaseActivity(), SettingsView {
     }
 
     override fun setupUX() {
-
+        //         btnEntry.setOnClickListener { loginPresenter.loginUser(etPhone.text.toString(), etPassword.text.toString())}
+    btnSave.setOnClickListener { ChangeProfilePresenter.updateProfile }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -31,4 +31,8 @@ interface User {
     @POST("/app/user/is_logged")
     fun getProfile(@Query("token") token: String): Observable<ApiResponse<UserDTO>>
 
+    @POST("/app/user/update/")
+    fun updateProfile(@Body user: UserDTO) : Observable<ApiResponse<UserDTO>>
+
+
 }
