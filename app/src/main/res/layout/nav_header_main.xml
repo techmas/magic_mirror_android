@@ -4,57 +4,48 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="@color/colorPrimary"
-    android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="@dimen/activity_big_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_user_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/nav_header_desc"
-            android:paddingTop="@dimen/activity_small_margin"
-            app:srcCompat="@mipmap/ic_launcher" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:src="@drawable/girl" />
 
         <ImageView
             android:id="@+id/iv_heart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/icon_small"
+            android:layout_height="@dimen/icon_small"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvNumber"
             android:contentDescription="@string/nav_header_desc"
-            android:gravity="right"
-            android:layout_weight="4"
-            android:paddingTop="@dimen/activity_small_margin"
             app:srcCompat="@drawable/heart_white" />
 
         <TextView
+            android:id="@+id/tvNumber"
+            style="@android:style/TextAppearance.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_weight="1"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_small_margin"
             android:text="756"
             android:textColor="@color/light_background" />
 
-
-    </LinearLayout>
-
+    </RelativeLayout>
 
     <TextView
+        style="@android:style/TextAppearance.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_very_big_margin"
         android:text="@string/user_name"
-        android:textColor="@color/light_background"/>
-
+        android:textColor="@color/light_background" />
 
 </LinearLayout>
 
