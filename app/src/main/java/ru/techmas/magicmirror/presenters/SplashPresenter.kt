@@ -40,8 +40,6 @@ internal constructor(restApi: RestApi, preferenceHelper: TokenHelper, val appDat
                 .compose(RxUtils.httpSchedulers())
                 .subscribe({ successGetProfile(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)
-
-
     }
 
     override fun handleError(it: Throwable?) {
@@ -53,6 +51,7 @@ internal constructor(restApi: RestApi, preferenceHelper: TokenHelper, val appDat
         if (response.status != Const.API.STATUS_ERROR) {
             appData.user = response.data!!
             viewState.startActivity(MainActivity::class.java)
-        }
+        } else
+            viewState.startActivity(AuthActivity::class.java)
     }
 }
