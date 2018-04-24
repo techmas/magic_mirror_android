@@ -7,7 +7,7 @@ import android.content.SharedPreferences
  * You can contact me at: me@alexbykov.ru.
  */
 
-class TokenHelper(private val preferences: SharedPreferences) {
+class PreferenceHelper(private val preferences: SharedPreferences) {
 
     companion object {
         private val PREF_TOKEN_API = "tokenAPI"

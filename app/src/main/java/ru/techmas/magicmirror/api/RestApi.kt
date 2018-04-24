@@ -7,22 +7,23 @@ import java.util.concurrent.TimeUnit
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.techmas.magicmirror.Const
+import ru.techmas.magicmirror.api.endpoints.Photo
 import ru.techmas.magicmirror.api.endpoints.User
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 /**
  * Created by Alex Bykov on 09.11.2016.
  * You can contact me at: me@alexbykov.ru.
  */
 
-class RestApi(private val tokenHelper: TokenHelper) {
+class RestApi(private val preferenceHelper: PreferenceHelper) {
 
     val user: User
+    val photo: Photo
     private val retrofit: Retrofit
 
     init {
@@ -50,6 +51,7 @@ class RestApi(private val tokenHelper: TokenHelper) {
                 .build()
 
         user = retrofit.create(User::class.java)
+        photo = retrofit.create(Photo::class.java)
     }
 
     fun getServer(): String {
@@ -69,7 +71,7 @@ class RestApi(private val tokenHelper: TokenHelper) {
             val NO_AUTHORIZED = 401
 
             val request = chain.request()
-            val token = tokenHelper.token
+            val token = preferenceHelper.token
             val newRequest = request.newBuilder()
                     .addHeader(Const.Url.AUTHORIZATION, token)
                     .build()

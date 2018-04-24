@@ -15,6 +15,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_profile.*
 import ru.techmas.magicmirror.activities.MainActivity
+import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.utils.Injector
 
 
@@ -24,11 +25,13 @@ class ProfileFragment : BaseFragment(), ProfileView {
     }
 
     override fun setupUX() {
+    }
 
-        ivPhoto?.loadImageFromUrl(profilePresenter.bestPhoto.previewPicture as String)
-        tvNumber?.text = profilePresenter.bestPhoto.propertyPhotoRateValue as String
-        tvName?.text = profilePresenter.bestPhoto.name as String
-        tvRating?.text = profilePresenter.bestPhoto.propertyPhotoUserValue as String
+    override fun showProfile(appData: AppData) {
+        ivPhoto.loadImageFromUrl(appData.photo.previewPicture!!)
+        tvNumber.text = appData.photo.photoRate.toString()
+        tvName.text = appData.user.name
+        tvRating.text = appData.photo.photoRate.toString()
     }
 
     override fun showMainActivity() {

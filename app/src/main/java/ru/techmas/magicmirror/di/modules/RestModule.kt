@@ -8,9 +8,8 @@ import dagger.Module
 import dagger.Provides
 import ru.techmas.magicmirror.App
 import ru.techmas.magicmirror.api.RestApi
-import ru.techmas.magicmirror.api.models.BestPhoto
-import ru.techmas.magicmirror.api.models.UserDTO
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
+import ru.techmas.magicmirror.models.AppData
 
 /**
  * Date: 04.06.2017
@@ -24,23 +23,20 @@ import ru.techmas.magicmirror.utils.presenter.TokenHelper
 @Module
 class RestModule(app: App) {
 
-    private val tokenHelper: TokenHelper = TokenHelper(PreferenceManager.getDefaultSharedPreferences(app))
+    private val preferenceHelper: PreferenceHelper = PreferenceHelper(PreferenceManager.getDefaultSharedPreferences(app))
     private val restApi: RestApi
-    private val user: UserDTO
-    private val bestPhoto: BestPhoto
-
+    private val appData: AppData
 
     init {
-        restApi = RestApi(tokenHelper)
-        user = UserDTO()
-        bestPhoto = BestPhoto()
+        restApi = RestApi(preferenceHelper)
+        appData = AppData()
     }
 
 
     @Singleton
     @Provides
-    internal fun provideUser(): UserDTO {
-        return user
+    internal fun provideAppData(): AppData {
+        return appData
     }
 
     @Singleton
@@ -51,14 +47,9 @@ class RestModule(app: App) {
 
     @Singleton
     @Provides
-    internal fun provideTokenHelper(): TokenHelper {
-        return tokenHelper
+    internal fun provideTokenHelper(): PreferenceHelper {
+        return preferenceHelper
     }
 
-    @Singleton
-    @Provides
-    internal fun provideBestPhoto(): BestPhoto {
-        return bestPhoto
-    }
 }
 

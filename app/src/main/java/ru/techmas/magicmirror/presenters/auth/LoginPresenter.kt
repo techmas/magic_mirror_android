@@ -7,37 +7,32 @@ import ru.techmas.magicmirror.Const
 import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.api.models.UserDTO
+import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.presenters.BasePresenter
 import ru.techmas.magicmirror.utils.RxUtils
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 import javax.inject.Inject
 
 
 @InjectViewState
 class LoginPresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper, val user: UserDTO) : BasePresenter<LoginView>() {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<LoginView>() {
 
     init {
-        this.restApi = restApi
-        this.tokenHelper= tokenHelper
     }
 
     fun loginUser(phone: String, password: String) {
-        val request = restApi!!.user.login(phone, password)
+        val request = restApi.user.login(phone, password)
                 .compose(RxUtils.httpSchedulers())
                 .subscribe({ successLogin(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)
     }
 
-    private fun handleError(it: Throwable?) {
-//        Log.d()
-    }
-
     private fun successLogin(response: ApiResponse<UserDTO>) {
         if (response.status != Const.API.STATUS_ERROR) {
-            tokenHelper!!.token = response.data!!.token
-            user.name = response.data!!.name
+            preferenceHelper.token = response.data!!.token
+            appData.user = response.data!!
             viewState.showMainActivity()
         }
     }

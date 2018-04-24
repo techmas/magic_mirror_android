@@ -11,7 +11,7 @@ import ru.techmas.magicmirror.activities.MainActivity;
 import ru.techmas.magicmirror.api.RestApi;
 import ru.techmas.magicmirror.interfaces.views.SplashView;
 import ru.techmas.magicmirror.interfaces.views.SplashView$$State;
-import ru.techmas.magicmirror.utils.presenter.TokenHelper;
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper;
 
 import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.when;
@@ -33,21 +33,21 @@ public class SplashPresenterTest {
     @Mock
     RestApi restApi;
     @Mock
-    TokenHelper tokenHelper;
+    PreferenceHelper preferenceHelper;
 
     private SplashPresenter splashPresenter;
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        splashPresenter = new SplashPresenter(restApi, tokenHelper);
+        splashPresenter = new SplashPresenter(restApi, preferenceHelper);
         splashPresenter.attachView(splashView);
         splashPresenter.setViewState(splashViewState);
     }
 
     @Test
     public void startNextTest() {
-        when(tokenHelper.isFirstRun()).thenReturn(true);
+        when(preferenceHelper.isFirstRun()).thenReturn(true);
         splashPresenter.startNext();
         verify(splashViewState).showErrorConnection(false);
         verify(splashViewState).startActivity(MainActivity.class);
