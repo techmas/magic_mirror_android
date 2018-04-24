@@ -8,12 +8,12 @@ import javax.inject.Inject
 import ru.techmas.magicmirror.activities.MainActivity
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.interfaces.views.SplashView
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 
 @InjectViewState
 class SplashPresenter @Inject
-internal constructor(restApi: RestApi, preferenceHelper: TokenHelper) : BasePresenter<SplashView>() {
+internal constructor(restApi: RestApi, preferenceHelper: PreferenceHelper) : BasePresenter<SplashView>() {
 
     init {
         this.restApi = restApi

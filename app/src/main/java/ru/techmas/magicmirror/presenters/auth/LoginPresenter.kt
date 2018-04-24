@@ -9,18 +9,18 @@ import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.api.models.UserDTO
 import ru.techmas.magicmirror.presenters.BasePresenter
 import ru.techmas.magicmirror.utils.RxUtils
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 import javax.inject.Inject
 
 
 @InjectViewState
 class LoginPresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper, val user: UserDTO) : BasePresenter<LoginView>() {
+constructor(restApi: RestApi, preferenceHelper: PreferenceHelper, val user: UserDTO) : BasePresenter<LoginView>() {
 
     init {
         this.restApi = restApi
-        this.tokenHelper= tokenHelper
+        this.tokenHelper= preferenceHelper
     }
 
     fun loginUser(phone: String, password: String) {

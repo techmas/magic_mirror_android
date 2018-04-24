@@ -7,9 +7,6 @@ import ru.techmas.magicmirror.Const
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.api.models.BestPhoto
-import ru.techmas.magicmirror.api.models.UserDTO
-import ru.techmas.magicmirror.interfaces.views.LoginView
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
 
 import javax.inject.Inject
 
