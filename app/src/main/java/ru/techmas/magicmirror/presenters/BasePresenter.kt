@@ -20,8 +20,11 @@ open class BasePresenter<View : MvpView> : MvpPresenter<View>() {
     open val TAG = javaClass.simpleName
 
 
-
     private val compositeDisposable = CompositeDisposable()
+
+    open fun handleError(it: Throwable?) {
+//        Log.d()
+    }
 
 
     protected fun unSubscribeOnDestroy(disposable: Disposable) {

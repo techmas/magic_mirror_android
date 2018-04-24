@@ -10,6 +10,8 @@ import ru.techmas.magicmirror.R
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.activity_settings.*
+import ru.techmas.magicmirror.api.models.UserDTO
 
 import ru.techmas.magicmirror.utils.Injector
 
@@ -21,7 +23,16 @@ class SettingsActivity : BaseActivity(), SettingsView {
     }
 
     override fun setupUX() {
+        //         btnEntry.setOnClickListener { loginPresenter.loginUser(etPhone.text.toString(), etPassword.text.toString())}
+        btnSave.setOnClickListener {
+            settingsPresenter.saveProfile(
+                    etName.text.toString(),
+                    etSurname.text.toString())
+        }
+    }
 
+    override fun showUserData(user: UserDTO) {
+        // Сюда сбиндить со лэйаута все поля!!
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

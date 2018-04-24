@@ -25,6 +25,9 @@ data class PhotoDTO(
         @SerializedName("DETAIL_PICTURE")
         var detailPicture: String? = null,
 
+        @SerializedName("PREVIEW_PICTURE")
+        var previewPicture: String? = null,
+
         @SerializedName("PROPERTY_PHOTO_RATE_VALUE")
         var photoRate: Long? = null,
 

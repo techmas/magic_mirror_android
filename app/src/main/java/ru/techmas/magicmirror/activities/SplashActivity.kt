@@ -39,6 +39,8 @@ class SplashActivity : BaseActivity(), SplashView {
         setContentView(LAYOUT)
         super.onCreate(savedInstanceState)
         mvpDelegate.onAttach()
+
+
     }
 
 

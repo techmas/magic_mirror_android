@@ -27,7 +27,27 @@ internal constructor(restApi: RestApi, preferenceHelper: PreferenceHelper) : Bas
         if (tokenHelper!!.isFirstRun)
             viewState.startActivity(AuthActivity::class.java)
         else
+            getProfile()
+    }
+
+    private fun getProfile() {
+        val request = restApi!!.user.getProfile(tokenHelper!!.token!!)
+                .compose(RxUtils.httpSchedulers())
+                .subscribe({ successGetProfile(it) }, { handleError(it) })
+        unSubscribeOnDestroy(request)
+    }
+
+    override fun handleError(it: Throwable?) {
+        super.handleError(it)
+        viewState.startActivity(AuthActivity::class.java)
+    }
+
+    private fun successGetProfile(response: ApiResponse<UserDTO>) {
+        if (response.status != Const.API.STATUS_ERROR) {
+            appData.user = response.data!!
             viewState.startActivity(MainActivity::class.java)
+        } else
+            viewState.startActivity(AuthActivity::class.java)
     }
 
 }
