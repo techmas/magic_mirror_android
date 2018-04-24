@@ -9,24 +9,22 @@ import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.api.models.UserDTO
 import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.utils.RxUtils
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 import javax.inject.Inject
 
 
 @InjectViewState
 class SettingsPresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper, val appData: AppData) : BasePresenter<SettingsView>() {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<SettingsView>() {
 
 
     init {
-        this.restApi = restApi
-        this.tokenHelper = tokenHelper
         getProfile()
     }
 
     private fun getProfile() {
-        val request = restApi!!.user.getProfile(tokenHelper!!.token!!)
+        val request = restApi.user.getProfile(preferenceHelper.token!!)
                 .compose(RxUtils.httpSchedulers())
                 .subscribe({ successGetProfile(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)
@@ -48,9 +46,8 @@ constructor(restApi: RestApi, tokenHelper: TokenHelper, val appData: AppData) : 
 
     fun successUpdate(response: ApiResponse<UserDTO>) {
         if (response.status != Const.API.STATUS_ERROR) {
-            tokenHelper!!.token = response.data!!.token
+            preferenceHelper.token = response.data!!.token
             appData.user = response.data!!
-
         }
     }
 

@@ -10,23 +10,21 @@ import ru.techmas.magicmirror.api.models.HashResponse
 import ru.techmas.magicmirror.api.models.PhotoDTO
 import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.utils.RxUtils
-import ru.techmas.magicmirror.utils.presenter.TokenHelper
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 import javax.inject.Inject
 
 
 @InjectViewState
 class ProfilePresenter @Inject
-constructor(restApi: RestApi, tokenHelper: TokenHelper, val appData: AppData) : BasePresenter<ProfileView>() {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<ProfileView>() {
 
     init {
-        this.restApi = restApi
-        this.tokenHelper = tokenHelper
         getProfile()
     }
 
     private fun getProfile() {
-        val request = restApi!!.user.getPhoto(tokenHelper!!.token!!, appData.user.token!!)
+        val request = restApi.user.getPhoto(preferenceHelper.token!!, appData.user.token!!)
                 .compose(RxUtils.httpSchedulers())
                 .subscribe({ successGetProfile(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)

@@ -4,40 +4,32 @@ import ru.techmas.magicmirror.interfaces.views.TopView
 
 import com.arellomobile.mvp.InjectViewState
 import ru.techmas.magicmirror.api.RestApi
+import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.models.Photos
 import ru.techmas.magicmirror.utils.RxUtils
+import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
 
 import javax.inject.Inject
 
 
 @InjectViewState
 class TopPresenter @Inject
-constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper) : BasePresenter<TopView>(), BaseRecyclerAdapter.OnItemClickListener {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper) : BasePresenter<TopView>() {
+//        , BaseRecyclerAdapter.OnItemClickListener {
 
     init {
-        getToken()
+        getPhotos()
     }
 
-    private fun getToken() {
-        val request = restApi.auth.geToken("android", "No!xlab2018")
+    private fun getPhotos() {
+        val request = restApi.photo.getPhotos(preferenceHelper.token!!, null, null, null)
                 .compose(RxUtils.httpSchedulers())
-                .subscribe({ successGetToken(it)}, {handleError(it)})
+                .subscribe({ successGetList(it) }, { handleError(it) })
         unSubscribeOnDestroy(request)
     }
 
-    private fun successGetToken(response: TokenResponse) {
-        preferenceHelper.token = response.key
-        getPhoto()
+    private fun successGetList(response: ApiResponse<Photos>) {
+        viewState.showData(response.data!!)
     }
 
-
-private fun getPhoto() {
-    val request = restApi.photo.getVPhoto()
-            .compose(RxUtils.httpSchedulers())
-            .subscribe({ successGetList(it)}, { handleError(it) })
-    unSubscribeOnDestroy(request)
-}
-
-private fun successGetList(response: ListResponse<Photos>) {
-    viewState.showData(response.results)
 }

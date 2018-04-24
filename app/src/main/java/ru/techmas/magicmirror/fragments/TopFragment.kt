@@ -11,10 +11,12 @@ import ru.techmas.magicmirror.presenters.TopPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import ru.techmas.magicmirror.models.Photos
 import ru.techmas.magicmirror.utils.Injector
 
 
 class TopFragment : BaseFragment(), TopView {
+
     override fun setupUI() {
 
     }
@@ -27,6 +29,10 @@ class TopFragment : BaseFragment(), TopView {
                               savedInstanceState: Bundle?): View? {
         rootView = inflater!!.inflate(LAYOUT, container, false)
         return rootView
+    }
+
+    override fun showData(results: Photos) {
+
     }
 
     @InjectPresenter

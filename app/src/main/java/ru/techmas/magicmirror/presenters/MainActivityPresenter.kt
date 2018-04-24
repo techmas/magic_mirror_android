@@ -14,10 +14,9 @@ import javax.inject.Inject
 
 @InjectViewState
 class MainActivityPresenter @Inject
-internal constructor(restApi: RestApi) : BasePresenter<MainView>(), NavigationView.OnNavigationItemSelectedListener {
+internal constructor(val restApi: RestApi) : BasePresenter<MainView>(), NavigationView.OnNavigationItemSelectedListener {
 
     init {
-        this.restApi = restApi
         Log.d(TAG, "MainActivityPresenter: text")
     }
 

@@ -29,9 +29,9 @@ class ProfileFragment : BaseFragment(), ProfileView {
 
     override fun showProfile(appData: AppData) {
         ivPhoto.loadImageFromUrl(appData.photo.previewPicture!!)
-        tvNumber.text = appData.photo.propertyPhotoRateValue.toString()
+        tvNumber.text = appData.photo.photoRate.toString()
         tvName.text = appData.user.name
-        tvRating.text = appData.photo.propertyPhotoUserValue.toString()
+        tvRating.text = appData.photo.photoRate.toString()
     }
 
     override fun showMainActivity() {

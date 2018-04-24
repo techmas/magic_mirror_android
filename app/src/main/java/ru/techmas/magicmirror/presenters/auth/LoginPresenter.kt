@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @InjectViewState
 class LoginPresenter @Inject
-constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val user: UserDTO, val appData: AppData) : BasePresenter<LoginView>() {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<LoginView>() {
 
     init {
     }

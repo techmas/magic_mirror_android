@@ -18,9 +18,9 @@ import ru.techmas.magicmirror.models.Photos
 interface Photo {
 
     @GET("/app/photo/rate_photo")
-    fun getPhoto(@Query("token") token: String,
-              @Query("bh_from") bh_from: String,
-              @Query("bh_to") bh_to: String,
-              @Query("city") city: String): Observable<ApiResponse<Photos>>
+    fun getPhotos(@Query("token") token: String,
+                  @Query("bh_from") bh_from: String?,
+                  @Query("bh_to") bh_to: String?,
+                  @Query("city") city: String?): Observable<ApiResponse<Photos>>
 
 }
