@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 
 /*
-"ID": "417",
+            "ID": "417",
             "NAME": "[\n  "title"\n]",
             "DETAIL_PICTURE": "http://magicmirror-v2.techmas.ru:80/upload/iblock/799/image.jpg",
             "PREVIEW_PICTURE": "http://magicmirror-v2.techmas.ru:80/upload/iblock/9b7/image.jpg",
@@ -41,7 +41,7 @@ data class PhotoDTO(
         var userRate: String? = null,
 
         @SerializedName("USER_FULL_DATA")
-        var userFullData: UserDTO? = null
+        var user: UserDTO? = null
 
 //        @SerializedName("USER_GROUP")
 //        var userGroup: String? = null
