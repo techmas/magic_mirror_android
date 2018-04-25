@@ -15,6 +15,8 @@ import com.google.gson.annotations.SerializedName
             "USER_RATE_ID": "47",
             "USER_FULL_DATA":
  */
+
+
 data class PhotoDTO(
         @SerializedName("ID")
         var id: Long? = null,
@@ -34,6 +36,9 @@ data class PhotoDTO(
         @SerializedName("PROPERTY_PHOTO_USER_VALUE")
         var photoUser: Long? = null,
 
+        @SerializedName("SORT")
+        var sort: Long? = null,
+
         @SerializedName("DETAIL_TEXT_TYPE")
         var textType: String? = null,
 
@@ -41,7 +46,11 @@ data class PhotoDTO(
         var userRate: String? = null,
 
         @SerializedName("USER_FULL_DATA")
-        var user: UserDTO? = null
+        var user: UserDTO? = null,
+
+        @SerializedName("USER_ID")
+        var userId: Long? = null
+
 
 //        @SerializedName("USER_GROUP")
 //        var userGroup: String? = null
