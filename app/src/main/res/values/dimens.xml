@@ -15,7 +15,8 @@
     <dimen name="button_width">140dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="width_edittext">200dp</dimen>
-    <dimen name="icon_small">30dp</dimen>
+    <dimen name="icon_album">15dp</dimen>
+    <dimen name="icon_small">25dp</dimen>
     <dimen name="footer_size">40dp</dimen>
     <dimen name="footer_dark_big">120dp</dimen>
     <dimen name="mask_size">270dp</dimen>

@@ -3,6 +3,7 @@ package ru.techmas.magicmirror.presenters
 import ru.techmas.magicmirror.interfaces.views.TopView
 
 import com.arellomobile.mvp.InjectViewState
+import ru.noixlab.drivepoint.adapters.BaseRecyclerAdapter
 import ru.techmas.magicmirror.api.RestApi
 import ru.techmas.magicmirror.api.models.ApiResponse
 import ru.techmas.magicmirror.models.Photos
@@ -14,7 +15,10 @@ import javax.inject.Inject
 
 @InjectViewState
 class TopPresenter @Inject
-constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper) : BasePresenter<TopView>() {
+constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper) : BasePresenter<TopView>(), BaseRecyclerAdapter.OnItemClickListener {
+
+    override fun onClick(item: Any) {
+    }
 //        , BaseRecyclerAdapter.OnItemClickListener {
 
     init {

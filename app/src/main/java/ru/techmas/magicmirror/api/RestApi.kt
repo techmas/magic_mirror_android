@@ -11,6 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.techmas.magicmirror.Const
+import ru.techmas.magicmirror.api.endpoints.Album
 import ru.techmas.magicmirror.api.endpoints.Photo
 import ru.techmas.magicmirror.api.endpoints.User
 import ru.techmas.magicmirror.utils.presenter.PreferenceHelper
@@ -24,6 +25,8 @@ class RestApi(private val preferenceHelper: PreferenceHelper) {
 
     val user: User
     val photo: Photo
+    val album: Album
+
     private val retrofit: Retrofit
 
     init {
@@ -52,6 +55,8 @@ class RestApi(private val preferenceHelper: PreferenceHelper) {
 
         user = retrofit.create(User::class.java)
         photo = retrofit.create(Photo::class.java)
+        album = retrofit.create(Album::class.java)
+
     }
 
     fun getServer(): String {
@@ -84,5 +89,7 @@ class RestApi(private val preferenceHelper: PreferenceHelper) {
             return response
         }
     }
+
+
 
 }
