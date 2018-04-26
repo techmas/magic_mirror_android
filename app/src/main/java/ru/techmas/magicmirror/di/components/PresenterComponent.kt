@@ -35,4 +35,5 @@ interface PresenterComponent {
     val profilePresenter: ProfilePresenter
     val topPresenter: TopPresenter
     val personPresenter: PersonPresenter
+    val photoPresenter: PhotoPresenter
 }

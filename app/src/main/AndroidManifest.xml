@@ -46,6 +46,12 @@ package="ru.techmas.magicmirror">
     <activity android:name="ru.techmas.magicmirror.activities.MainActivity" />
     <activity android:name="ru.techmas.magicmirror.activities.AuthActivity" />
     <activity android:name="ru.techmas.magicmirror.activities.SettingsActivity" />
-    <activity android:name="ru.techmas.magicmirror.activities.PersonActivity"/>
+    <activity android:name="ru.techmas.magicmirror.activities.PersonActivity" />
+    <activity android:name="ru.techmas.magicmirror.activities.PhotoActivity"/>
 </application>
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="18"/>
 </manifest>
