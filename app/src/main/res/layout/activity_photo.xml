@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/girl"
+        android:tint="@color/dark_photo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ltBottom"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/mask_size"
+            android:layout_height="@dimen/mask_size"
+            android:src="@drawable/mask" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ltBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_dark_big"
+        android:layout_alignParentBottom="true"
+        android:background="@color/footer_dark">
+
+        <ImageView
+            android:id="@+id/ivFlash"
+            android:layout_width="@dimen/icon_middle"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_extra_big_margin"
+            android:adjustViewBounds="true"
+            android:src="@drawable/flash" />
+
+        <ImageView
+            android:id="@+id/ivPhotoSel"
+            android:layout_width="@dimen/icon_big"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/photo_sel" />
+
+        <ImageView
+            android:id="@+id/ivRevCamera"
+            android:layout_width="@dimen/icon_middle"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_extra_big_margin"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rev_cam" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
