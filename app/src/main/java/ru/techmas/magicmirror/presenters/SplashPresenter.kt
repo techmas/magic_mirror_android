@@ -21,7 +21,6 @@ class SplashPresenter @Inject
 internal constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<SplashView>() {
 
     init {
-        startNext()
     }
 
     fun startNext() {
