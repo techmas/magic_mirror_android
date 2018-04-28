@@ -1,15 +1,9 @@
 package ru.techmas.magicmirror.activities
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
-import android.support.v4.content.FileProvider
-import android.widget.Toast
 
 import ru.techmas.magicmirror.interfaces.views.PhotoView
 import ru.techmas.magicmirror.presenters.PhotoPresenter
@@ -22,11 +16,6 @@ import kotlinx.android.synthetic.main.activity_photo.*
 import ru.techmas.magicmirror.utils.CameraHelper
 
 import ru.techmas.magicmirror.utils.Injector
-import java.io.File
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
-
 
 class PhotoActivity : BaseActivity(), PhotoView {
 
@@ -37,6 +26,7 @@ class PhotoActivity : BaseActivity(), PhotoView {
     }
 
     override fun setupUI() {
+        takePhoto()
     }
 
     override fun setupUX() {
@@ -46,7 +36,6 @@ class PhotoActivity : BaseActivity(), PhotoView {
         setContentView(LAYOUT)
         super.onCreate(savedInstanceState)
 
-        takePhoto()
 //        ivPhotoSel.setOnClickListener {
 //        }
     }

@@ -18,6 +18,7 @@ class MainActivityPresenter @Inject
 internal constructor(val restApi: RestApi) : BasePresenter<MainView>(), NavigationView.OnNavigationItemSelectedListener {
 
     init {
+        viewState.startFragment(TopFragment.newInstance())
         Log.d(TAG, "MainActivityPresenter: text")
     }
 

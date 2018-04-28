@@ -18,13 +18,11 @@
             android:src="@drawable/girl" />
 
         <ImageView
-            android:id="@+id/iv_heart"
             android:layout_width="@dimen/icon_small"
             android:layout_height="@dimen/icon_small"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/tvNumber"
-            android:contentDescription="@string/nav_header_desc"
-            app:srcCompat="@drawable/heart_white" />
+            android:src="@drawable/heart_white" />
 
         <TextView
             android:id="@+id/tvNumber"
@@ -40,7 +38,7 @@
     </RelativeLayout>
 
     <TextView
-        style="@android:style/TextAppearance.Small"
+        style="@android:style/TextAppearance.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_very_big_margin"
