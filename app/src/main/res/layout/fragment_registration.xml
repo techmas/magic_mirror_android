@@ -1,86 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <TextView
-        style="@style/PinkBig"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/registration" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
+        <TextView
+            style="@style/PinkBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registration" />
 
-        <EditText
-            android:id="@+id/etName"
-            style="@style/StandardEditText"
-            android:hint="@string/name" />
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
 
-
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
-
-        <EditText
-            android:id="@+id/etSurname"
-            style="@style/StandardEditText"
-            android:hint="@string/surname" />
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/etName"
+                style="@style/StandardEditText"
+                android:hint="@string/name" />
+        </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
 
-        <EditText
-            android:id="@+id/etPhone"
-            style="@style/StandardEditText"
-            android:hint="@string/tmp_phone"
-            android:inputType="phone|number" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
-
-        <EditText
-            android:id="@+id/etEmail"
-            style="@style/StandardEditText"
-            android:hint="@string/e_mail"
-            android:inputType="textEmailAddress" />
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/etLastName"
+                style="@style/StandardEditText"
+                android:hint="@string/surname" />
+        </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
 
-        <EditText
-            android:id="@+id/etPassword"
-            style="@style/StandardEditText"
-            android:hint="@string/lbl_password"
-            android:inputType="textPassword" />
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/StandardEditText"
+                android:hint="@string/tmp_phone"
+                android:inputType="phone|number" />
+        </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnRegistration"
-        style="@style/ButtonPink"
-        android:layout_marginTop="@dimen/activity_very_big_margin"
-        android:text="@string/registration" />
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
 
-    <TextView
-        android:id="@+id/tvEntry"
-        style="@style/PinkSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_big_margin"
-        android:text="@string/entry" />
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/StandardEditText"
+                android:hint="@string/e_mail"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
 
 
-</LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/StandardEditText"
+                android:hint="@string/lbl_password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegistration"
+            style="@style/ButtonPink"
+            android:layout_marginTop="@dimen/activity_very_big_margin"
+            android:text="@string/registration" />
+
+        <TextView
+            android:id="@+id/tvEntry"
+            style="@style/PinkSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_big_margin"
+            android:layout_marginBottom="@dimen/activity_very_big_margin"
+            android:text="@string/entry" />
+
+    </LinearLayout>
+</ScrollView>
+
 

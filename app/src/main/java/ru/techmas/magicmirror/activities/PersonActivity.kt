@@ -11,8 +11,12 @@ import ru.techmas.magicmirror.R
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.activity_person.*
+import ru.techmas.magicmirror.api.models.PhotoDTO
+import ru.techmas.magicmirror.utils.ImageLoader
 
 import ru.techmas.magicmirror.utils.Injector
+import ru.techmas.magicmirror.utils.loadImageFromUrl
 
 
 class PersonActivity : BaseActivity(), PersonView {
@@ -31,6 +35,11 @@ class PersonActivity : BaseActivity(), PersonView {
 
     @InjectPresenter
     lateinit var personPresenter: PersonPresenter
+
+    override fun showPhoto(photo: PhotoDTO) {
+        photo.detailPicture?.let { ivPhoto.loadImageFromUrl(it) }
+        tvNumber.text = photo.photoRate.toString()
+    }
 
     @ProvidePresenter
     internal fun providePersonPresenter(): PersonPresenter {

@@ -18,7 +18,6 @@ import javax.inject.Inject
 class SettingsPresenter @Inject
 constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelper, val appData: AppData) : BasePresenter<SettingsView>() {
 
-
     init {
         getProfile()
     }

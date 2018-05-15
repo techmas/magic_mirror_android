@@ -18,6 +18,7 @@ import ru.techmas.magicmirror.interfaces.utils_view.NavigatorActivityView
 import ru.techmas.magicmirror.utils.Injector
 import ru.techmas.magicmirror.utils.KeyboardHelper
 import ru.techmas.magicmirror.utils.Navigator
+import ru.techmas.magicmirror.utils.snack
 
 /**
  * Created by Alex Bykov on 09.11.2016.
@@ -40,6 +41,14 @@ abstract class BaseFragment : MvpAppCompatFragment(), NavigatorActivityView, Bas
         super.onViewCreated(view, savedInstanceState)
         setupUI()
         setupUX()
+    }
+
+    override fun showError(message: String) {
+        view!!.snack(message)
+    }
+
+    override fun close() {
+        activity.onBackPressed()
     }
 
     protected fun hideKeyboard() {

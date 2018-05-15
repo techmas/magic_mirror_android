@@ -11,17 +11,34 @@ import ru.techmas.magicmirror.presenters.auth.RecoveryPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.fragment_recovery.*
 import ru.techmas.magicmirror.utils.Injector
 
 
 class RecoveryFragment : BaseFragment(), RecoveryView {
 
-    override fun setupUI() {
+    override fun showRecoverySuccess() {
+        hideView(ltRecovery)
+        hideView(ltRecoveryControl)
+        showView(ltRecoverySuccess)
+    }
 
+    override fun showRecoveryControl() {
+        hideView(ltRecovery)
+        showView(ltRecoveryControl)
+    }
+
+    override fun setupUI() {
+        showView(ltRecovery)
+        hideView(ltRecoveryControl)
+        hideView(ltRecoverySuccess)
     }
 
     override fun setupUX() {
-
+        btnRecover.setOnClickListener { recoveryPresenter.sendRecoverRequest(etPhone.text.toString(), etEmail.text.toString())}
+        btnSend.setOnClickListener {recoveryPresenter.checkCode(etControl.text.toString(), etNewPassword.text.toString(), etRepeatPassword.text.toString())}
+        btnNext.setOnClickListener { startFragment(LoginFragment.newInstance())}
+        tvCancel.setOnClickListener { startFragment(LoginFragment.newInstance())}
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,

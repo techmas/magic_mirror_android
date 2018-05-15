@@ -13,5 +13,6 @@ class AuthPresenter @Inject
 constructor() : BasePresenter<AuthView>() {
     init {
         viewState.showLoginFragment()
+//        viewState.showRegistrationFragment()
     }
 }

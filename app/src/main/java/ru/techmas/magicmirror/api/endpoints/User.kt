@@ -22,7 +22,11 @@ interface User {
               @Query("password") password: String): Observable<ApiResponse<UserDTO>>
 
     @POST("app/user/reg")
-    fun registration(@Body user: UserDTO): Observable<ApiResponse<UserDTO>>
+    fun registration(@Query("login") login: String,
+                     @Query("password") password: String,
+                     @Query("email") email: String,
+                     @Query("name") name: String,
+                     @Query("last_name") lastName: String): Observable<ApiResponse<String>>
 
     @POST("/app/user/get_user")
     fun getPhoto(@Query("token") token: String,
@@ -34,5 +38,12 @@ interface User {
     @POST("/app/user/update/")
     fun updateProfile(@Body user: UserDTO) : Observable<ApiResponse<UserDTO>>
 
+    @GET("app/user/forgot_password")
+    fun sendRecovery(@Query("search_data") date: String): Observable<ApiResponse<String>>
+
+    @GET("app/user/forgot_password")
+    fun checkRecovery(@Query("checkword") date: String,
+                      @Query("password") password: String,
+                      @Query("confirm_password") confirm: String): Observable<ApiResponse<String>>
 
 }

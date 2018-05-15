@@ -17,10 +17,7 @@ import ru.techmas.magicmirror.R
 import ru.techmas.magicmirror.fragments.BaseFragment
 import ru.techmas.magicmirror.interfaces.utils_view.BaseLifeCycle
 import ru.techmas.magicmirror.interfaces.utils_view.NavigatorActivityView
-import ru.techmas.magicmirror.utils.AnimationHelper
-import ru.techmas.magicmirror.utils.Injector
-import ru.techmas.magicmirror.utils.KeyboardHelper
-import ru.techmas.magicmirror.utils.Navigator
+import ru.techmas.magicmirror.utils.*
 
 /**
  * Created by Alex Bykov on 09.11.2016.
@@ -42,7 +39,13 @@ abstract class BaseActivity : MvpAppCompatActivity(), NavigatorActivityView, Bas
         setupUX()
     }
 
+    override fun showError(message: String) {
+        window.decorView.rootView.snack(message)
+    }
 
+    override fun close() {
+        finish()
+    }
     protected fun hideKeyboard() {
         KeyboardHelper.hide(this)
     }

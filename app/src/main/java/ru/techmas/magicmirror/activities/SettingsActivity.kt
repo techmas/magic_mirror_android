@@ -23,7 +23,6 @@ class SettingsActivity : BaseActivity(), SettingsView {
     }
 
     override fun setupUX() {
-        //         btnEntry.setOnClickListener { loginPresenter.loginUser(etPhone.text.toString(), etPassword.text.toString())}
         btnSave.setOnClickListener {
             settingsPresenter.saveProfile(
                     etName.text.toString(),

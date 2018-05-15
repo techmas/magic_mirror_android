@@ -1,4 +1,5 @@
 package ru.techmas.magicmirror.interfaces.views
 
 
-interface RegistrationView : BaseView
+interface RegistrationView : BaseView {
+}

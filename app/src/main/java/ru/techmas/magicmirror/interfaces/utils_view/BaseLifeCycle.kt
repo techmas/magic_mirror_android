@@ -11,6 +11,7 @@ package ru.techmas.magicmirror.interfaces.utils_view
 interface BaseLifeCycle {
 
     fun setupUI()
-
     fun setupUX()
+    fun close()
+    fun showError(message: String)
 }

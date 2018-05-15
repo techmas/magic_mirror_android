@@ -1,58 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput">
-
-        <EditText
-            android:id="@+id/etPhone"
-            style="@style/StandardEditText"
-            android:layout_width="@dimen/width_edittext"
-            android:layout_height="wrap_content"
-            android:hint="@string/tmp_phone"
-            android:inputType="phone|number" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        style="@style/TextInput"
-        android:layout_marginTop="@dimen/activity_middle_margin">
-
-        <EditText
-            android:id="@+id/etPassword"
-            style="@style/StandardEditText"
-            android:layout_width="@dimen/width_edittext"
-            android:layout_height="wrap_content"
-            android:hint="@string/lbl_password"
-            android:inputType="textPassword" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnEntry"
-        style="@style/ButtonPink"
-        android:layout_marginTop="@dimen/activity_very_big_margin"
-        android:text="@string/entry" />
-
-    <TextView
-        android:id="@+id/tvRegistration"
-        style="@style/PinkSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_big_margin"
-        android:text="@string/registration" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvForgot"
-        style="@style/GreySmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_very_big_margin"
-        android:text="@string/forgot_password" />
+        <android.support.design.widget.TextInputLayout style="@style/TextInput">
 
-</LinearLayout>
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/StandardEditText"
+                android:layout_width="@dimen/width_edittext"
+                android:layout_height="wrap_content"
+                android:hint="@string/tmp_phone"
+                android:inputType="phone|number" />
 
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInput"
+            android:layout_marginTop="@dimen/activity_middle_margin">
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/StandardEditText"
+                android:layout_width="@dimen/width_edittext"
+                android:layout_height="wrap_content"
+                android:hint="@string/lbl_password"
+                android:inputType="textPassword" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnEntry"
+            style="@style/ButtonPink"
+            android:layout_marginTop="@dimen/activity_very_big_margin"
+            android:text="@string/entry" />
+
+        <!--<TextView-->
+            <!--style="@style/GreySmall"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/activity_middle_margin"-->
+            <!--android:text="@string/entry_facebook" />-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--style="@style/GreySmall"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="через " />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvFacebook"-->
+                <!--style="@style/GreySmall"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Facebook "-->
+                <!--android:textColor="@color/color_facebook" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/activity_small_margin"-->
+            <!--android:background="@color/color_facebook"-->
+            <!--android:src="@drawable/facebook" />-->
+
+        <TextView
+            android:id="@+id/tvRegistration"
+            style="@style/PinkSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_big_margin"
+            android:text="@string/registration" />
+
+        <TextView
+            android:id="@+id/tvRecovery"
+            style="@style/GreySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_big_margin"
+            android:layout_marginBottom="@dimen/activity_very_big_margin"
+            android:text="@string/forgot_password" />
+
+    </LinearLayout>
+</ScrollView>

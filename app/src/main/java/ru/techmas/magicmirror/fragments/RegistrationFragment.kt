@@ -11,6 +11,7 @@ import ru.techmas.magicmirror.presenters.auth.RegistrationPresenter
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import kotlinx.android.synthetic.main.fragment_registration.*
 import ru.techmas.magicmirror.utils.Injector
 
 
@@ -23,6 +24,15 @@ class RegistrationFragment : BaseFragment(), RegistrationView {
     }
 
     override fun setupUI() {
+        btnRegistration.setOnClickListener {
+            registrationPresenter.registerUser(
+                    etName.text.toString(),
+                    etLastName.text.toString(),
+                    etPhone.text.toString(),
+                    etEmail.text.toString(),
+                    etPassword.text.toString())
+        }
+        tvEntry.setOnClickListener { startFragment(LoginFragment.newInstance()) }
 
     }
 

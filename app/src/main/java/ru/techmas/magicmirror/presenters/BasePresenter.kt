@@ -24,7 +24,6 @@ open class BasePresenter<View : MvpView> : MvpPresenter<View>() {
     private val compositeDisposable = CompositeDisposable()
 
     open fun handleError(throwable: Throwable) {
-
     }
 
     protected fun unSubscribeOnDestroy(disposable: Disposable) {

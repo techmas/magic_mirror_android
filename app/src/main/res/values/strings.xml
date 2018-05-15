@@ -38,4 +38,7 @@
     <string name="your_value">Ваша оценка красоты</string>
     <string name="you_occupy">Вы занимаете</string>
     <string name="place_in_rating">место в рейтинге по Москве</string>
+    <string name="entry_facebook">или войти</string>
+    <string name="phone_email_empty">Телефон или e-mail должны быть заполнены</string>
+    <string name="passwords_not_match">Пароли не совпадают</string>
 </resources>

@@ -44,10 +44,10 @@ internal constructor(val restApi: RestApi, val preferenceHelper: PreferenceHelpe
     }
 
     private fun successGetProfile(response: ApiResponse<UserDTO>) {
-        if (response.status != Const.API.STATUS_ERROR) {
-            appData.user = response.data!!
-            viewState.startActivity(MainActivity::class.java)
-        } else
+//        if (response.status != Const.API.STATUS_ERROR) {
+//            appData.user = response.data!!
+//            viewState.startActivity(MainActivity::class.java)
+//        } else
             viewState.startActivity(AuthActivity::class.java)
     }
 

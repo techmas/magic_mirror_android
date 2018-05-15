@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import ru.techmas.magicmirror.activities.MainActivity
 import ru.techmas.magicmirror.models.AppData
 import ru.techmas.magicmirror.utils.Injector
+import ru.techmas.magicmirror.utils.loadImageFromUrl
 
 
 class ProfileFragment : BaseFragment(), ProfileView {
@@ -64,12 +65,5 @@ class ProfileFragment : BaseFragment(), ProfileView {
 
             return fragment
         }
-    }
-
-
-    fun ImageView.loadImageFromUrl(url: String) {
-        Glide.with(context)
-                .load(url)
-                .into(this)
     }
 }

@@ -23,5 +23,6 @@
     <dimen name="icon_big">60dp</dimen>
     <dimen name="icon_middle">40dp</dimen>
     <dimen name="avatar_size">80dp</dimen>
+    <dimen name="photo_big">300dp</dimen>
 
 </resources>
